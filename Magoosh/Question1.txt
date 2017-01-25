@@ -1,0 +1,7 @@
+The function doesn't work as expected as the alert is never triggered. This is
+because the fadeOut function in JQuery is performed asynchronously and takes
+by default 400ms to fully change from a visible to hidden status. This means
+when the original function was called, the if statement would see the element
+as still visible as it hadn't become fully hidden yet, and wouldn't trigger the
+alert. The fixed code is attached in the question1.html file using a specified
+callback function for the fadeOut.

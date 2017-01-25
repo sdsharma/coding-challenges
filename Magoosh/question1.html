@@ -1,0 +1,37 @@
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="details" id="user-123-details">
+	  Account created: November 11, 2013 <br/>
+	  Favorite color: <span style="color:#66CD00;">chartreuse</span>
+	</div>
+<button class="toggle" data-target="user-123-details">Hide details</button>
+
+<script type="text/javascript">
+	$(function(){
+  // Clicking the button should cause the element with id specified by "data-target" to
+  // disappear, then display a goodbye message
+  $('button.toggle').click(function(){
+    // uses the button's "data-target" attribute to identify another element to toggle
+    var target = $('#' + $(this).data('target'));
+    
+    // toggles the visibility of the target
+    if (target.is(':visible')) {
+      target.fadeOut('slow', function(){
+      	// says goodbye if it was hidden
+      	alert('goodbye, cruel world!');
+      });
+      	
+    } else {
+      target.fadeIn();
+    }
+  });
+});
+</script>
+</body>
+</html>
